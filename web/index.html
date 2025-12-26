@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>记忆任务</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.7/dist/purify.min.js"></script>
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <h1>记忆任务</h1>
+      <div class="actions">
+        <button id="refresh-ready" class="btn">刷新可复习</button>
+        <button id="refresh-all" class="btn btn-ghost">刷新全部</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>创建新任务</h2>
+      <form id="create-form" class="form">
+        <label>问题 <textarea id="question" required></textarea></label>
+        <label>答案 <textarea id="answer" required></textarea></label>
+        <button type="submit" class="btn">保存</button>
+      </form>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>可复习</h2>
+        <div id="ready-list" class="list"></div>
+        <div id="ready-pagination" class="pagination"></div>
+      </div>
+      <div class="card">
+        <h2>全部任务</h2>
+        <div id="all-list" class="list"></div>
+        <div id="all-pagination" class="pagination"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
